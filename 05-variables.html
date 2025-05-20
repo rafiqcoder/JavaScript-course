@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="stylesheet" href="css/default.css" />
+    <script src="tools/indice.js"></script>
+    <script>
+      var current_class = "variaveis";
+    </script>
+    <script src="highlight/highlight.pack.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Variables</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  </head>
+
+  <body>
+    <div class="page-container">
+      <header>
+        <div class="logo-area">
+          <img src="img/logo_js.png" alt="logo javascript" />
+        </div>
+        <div class="course-title">
+          <h1>Javascript Course for Beginners</h1>
+          <h2>Instructor: Rafiqul Islam</h2>
+        </div>
+      </header>
+
+      <main>
+        <h3>Variables</h3>
+
+        <p>
+          Computer programs exist to manipulate data. What they basically do is
+          receive some input, process it and show some output. So far we haven't
+          seen our websites as computer programs yet because we only had static
+          pages. But from this moment on, if we want our websites to be dynamic
+          and interactive we need to think of them as computer programs running
+          on the web.
+        </p>
+
+        <p>
+          Take a look at the simple example of interactivity with the user
+          below.
+        </p>
+
+        <input
+          id="user_greeting_input"
+          type="text"
+          placeholder="Type your name..."
+        />
+        <button id="user_greeting_confirm">Confirm</button>
+        <br />
+        <strong id="user_greeting_message"></strong>
+        <br />
+
+        <p>
+          In this example we are working with data. We get the user input,
+          generate the greeting message and show it inside an HTML element.
+          There's also some logic involved, because if the field is left blank,
+          we replace the user input with "guest user".
+        </p>
+
+        <p>
+          In order to work with data in a computer program, we need
+          <strong>variables.</strong>
+        </p>
+
+        <p>
+          Variables are used to store data so we can use it later. Therefore we
+          need to give them names so we can refer to them. The name of a
+          variable is also called the identifier.
+        </p>
+
+        <p>
+          We create variables using the "var" keyword followed by its name, then
+          an equal sign and the value we want to assign to it.
+        </p>
+
+        <pre>
+                    <code class="javascript">
+    var user_name = "guest user";
+                    </code>
+                </pre>
+
+        <p>
+          After assigning the string value "guest user" to the variable, we can
+          access it anytime we want. To test it, let's create a variable like
+          above and then run the following statement:
+        </p>
+
+        <pre>
+                    <code class="javascript">
+    console.log(user_name);
+                    </code>
+                </pre>
+
+        <p>
+          What's the use of sending this value to the console? This is a good
+          method of testing. Now that we know that our variable was created and
+          the value has been correctlly assigned to it we can use it to form the
+          greeting message and place it inside that html element.
+        </p>
+
+        <pre>
+                    <code class="javascript">
+    document.getElementById("user_greeting_message").innerHTML = "Hello " + user_name + "!";
+                    </code>
+                </pre>
+
+        <p>
+          To form the message above we are doing string concatenation. In the
+          next lesson we'll talk about data types and you will learn more
+          details about this.
+        </p>
+
+        <p>
+          Before we move ahead, we need to know some rules for naming variables.
+        </p>
+
+        <h4>Variable names or Identifiers</h4>
+
+        <p>Variable names can contain:</p>
+
+        <ul>
+          <li>Letters</li>
+          <li>Numbers</li>
+          <li>Underscores (_)</li>
+          <li>Dollar signs ($)</li>
+        </ul>
+
+        <p>
+          Important: Variable names can contain numbers but
+          <strong>they can't start with numbers.</strong> White spaces are also
+          not allowed.
+        </p>
+
+        <p>See below a few examples of names:</p>
+
+        <pre>
+                        <code>
+    a             // ok
+    
+    name          // ok
+    
+    $name         // ok
+    
+    students_name // ok
+    
+    student_1     // ok
+    
+    1_b           // invalid because it starts with a number
+    
+    my-name       // invalid because it has a dash (only underscores are allowed)
+    
+    my name       // invalid because it contains a white space
+    
+    new           // invalid because 'new' is a Javascript reserved word, like will be explained below.
+                        </code>
+                    </pre>
+
+        <p>
+          If you speak a foreign language avoid using characters that don't
+          exist in english, like ç, å, é, д, 国, etc. Although they are
+          acceptable, we should also write universal code that can be easily
+          maintained by anyone who understands english.
+        </p>
+
+        <h4>Keywords</h4>
+
+        <p>
+          Keywords (or reserved words) are used for internal functions and
+          commands and therefore can't be used as variable names. See below some
+          examples of keywords:
+        </p>
+
+        <ul>
+          <li>function</li>
+          <li>if</li>
+          <li>else</li>
+          <li>var</li>
+          <li>new</li>
+          <li>return</li>
+          <li>break</li>
+          <li>default</li>
+          <li>in</li>
+        </ul>
+
+        <a target="_blank" href="https://www.w3schools.com/js/js_reserved.asp"
+          >See the complete list of keywords here.</a
+        >
+
+        <h4>Case Sensitive</h4>
+
+        <p>
+          As explained earlier, Javascript is a "case sensitive" language, so
+          have this in mind when creating your variable names. If you name a
+          variable as "username" and then try to call it as "Username" you will
+          get an error.
+        </p>
+
+        <h4>Keep your names meaningful and self-explanatory</h4>
+
+        <p>
+          Good code should be easily understood not only by who wrote it but
+          also by other people, so think of that when naming your variables. If
+          we're to create a program to get the first and last name of a person,
+          which of the names below do you think we should choose:
+        </p>
+
+        <pre>
+                    <code class="javascript">
+    //Option # 1:
+    var first_name = "John";
+    var last_name = "Doe";
+
+    //Option # 2:
+    var name1 = "John";
+    var name2 = "Doe";
+
+    //Option # 3:
+    var a = "John";
+    var b = "Doe";
+                    </code>
+                </pre>
+
+        <p>
+          It should be pretty obvious that the first option is the best one. The
+          second option is acceptable but not very good. The third option is
+          terrible.
+        </p>
+
+        <h4>Naming convention</h4>
+
+        <p>
+          Programming languages normally have naming conventions to make the
+          code more easily readable. Javascript programmers usually choose the
+          <strong>lower camelCase</strong> style for naming variables. This
+          means first letter lowercase and the first letters of subsequent words
+          in uppercase.
+        </p>
+
+        <pre>
+                    <code>
+    // camelCase examples:
+    
+    firstName
+    
+    lastName
+    
+    exchangeRate
+    
+    maxContainerWidth
+    
+    screenSize
+                    </code>
+                </pre>
+
+        <p>
+          Using only lower case characters and underscores to separate words,
+          like last_name or max_container_width is also common. Pick the style
+          you feel most comfortable with and keep consistent. Also try to keep
+          the names as short as possible, which means that firstName is better
+          than firstNameOfTheUser.
+        </p>
+        <h4>Using <code>let</code> and <code>const</code></h4>
+
+        <p>
+          In modern JavaScript (ES6 and beyond), instead of using
+          <code>var</code>, it's highly recommended to use <code>let</code> and
+          <code>const</code> for declaring variables.
+        </p>
+
+        <h5>🔹 <code>let</code> – Block-scoped Variable</h5>
+        <p>
+          <code>let</code> allows you to declare variables that are limited in
+          scope to the block, statement, or expression where they are used. It
+          prevents accidental redeclaration and is safer than <code>var</code>.
+        </p>
+
+        <pre>
+                    <code class="javascript">
+                let name = "Alice";
+                name = "Bob"; // ✅ Can be reassigned
+                
+                console.log(name); // Bob
+                
+                if (true) {
+                    let city = "London";
+                    console.log(city); // London
+                }
+                console.log(city); // ❌ Error: city is not defined
+                    </code>
+                </pre>
+
+        <h5>🔹 <code>const</code> – Constant Variable</h5>
+        <p>
+          <code>const</code> is used to declare variables that should never
+          change. You must assign a value when you declare it. It also has block
+          scope.
+        </p>
+
+        <pre>
+                    <code class="javascript">
+                const pi = 3.14159;
+                // pi = 3.14; ❌ Error: Assignment to constant variable
+                
+                console.log(pi); // 3.14159
+                
+                const colors = ["red", "green"];
+                colors.push("blue"); // ✅ Allowed: you can change contents of an array
+                
+                console.log(colors); // ["red", "green", "blue"]
+                    </code>
+                </pre>
+
+        <h5>🔸 Summary</h5>
+
+        <ul>
+          <li>✅ Use <code>let</code> when the value may change</li>
+          <li>
+            ✅ Use <code>const</code> when the value should not be reassigned
+          </li>
+          <li>
+            🚫 Avoid <code>var</code> in modern JavaScript unless necessary
+            (e.g., for legacy support)
+          </li>
+        </ul>
+
+        <table border="1" cellpadding="8" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Declaration</th>
+              <th>Scope</th>
+              <th>Reassignable?</th>
+              <th>Redeclarable?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>var</code></td>
+              <td>Function scoped</td>
+              <td>Yes</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td><code>let</code></td>
+              <td>Block scoped</td>
+              <td>Yes</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td><code>const</code></td>
+              <td>Block scoped</td>
+              <td>No</td>
+              <td>No</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          📌 Best Practice: Always start with <code>const</code>. If the value
+          needs to change later, switch to <code>let</code>.
+        </p>
+        let and const (ES6)
+        <p>
+          Starting from ES6 (ECMAScript 2015), JavaScript introduced two new
+          ways to declare variables: <code>let</code> and <code>const</code>.
+          These are now preferred over <code>var</code> in most situations
+          because they provide better control and avoid common mistakes in
+          JavaScript coding.
+        </p>
+        <pre> <code class="javascript"> // let: use when the variable value will change let age = 25; age = 26; // No problem // const: use when the value should not change const birthYear = 1995; birthYear = 1996; // ❌ This will cause an error </code> </pre>
+        <h5>
+          Why <code>let</code> and <code>const</code> are better than
+          <code>var</code>
+        </h5>
+        <ul>
+          <li>
+            <strong>Block Scope:</strong> <code>let</code> and
+            <code>const</code> are block-scoped, while <code>var</code> is
+            function-scoped.
+          </li>
+          <li>
+            <strong>No Hoisting Confusion:</strong> <code>var</code> is hoisted
+            to the top of the function or global scope, which can lead to bugs.
+            <code>let</code> and <code>const</code> also hoist, but don't allow
+            access before declaration.
+          </li>
+          <li>
+            <strong>Prevent Reassignment:</strong> <code>const</code> helps
+            prevent bugs by ensuring a variable’s value doesn't accidentally
+            change.
+          </li>
+        </ul>
+        <h5>Examples of Scoping</h5>
+        <pre> <code class="javascript"> 
+          { let name = "Alice"; console.log(name); // Alice } 
+          // console.log(name); // ❌ ReferenceError: name is not defined 
+          { var city = "New York"; } 
+          console.log(city); // ✅ Works, because var is function/global scoped </code> </pre>
+        <h5>Best Practices</h5>
+        <ul>
+          <li>Use <code>const</code> by default.</li>
+          <li>
+            Use <code>let</code> only if you plan to reassign the variable
+            later.
+          </li>
+          <li>
+            Avoid <code>var</code> unless required for backward compatibility.
+          </li>
+        </ul>
+        <div id="bottom-area">
+          <div class="prev-next-link">
+            <div class="link-aula" id="prev_class"></div>
+            <div class="link-aula" id="next_class"></div>
+          </div>
+
+          <div class="classes">
+            <h3>Contents</h3>
+            <ul id="class_index"></ul>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
