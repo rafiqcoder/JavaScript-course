@@ -214,7 +214,144 @@
     }
                     </code>
                 </pre>
+        <h3>Mastering ES6+ Array Methods</h3>
 
+        <p>
+          JavaScript ES6 introduced many powerful array methods that help us
+          write cleaner, shorter, and more readable code. These methods allow us
+          to iterate, transform, filter, and reduce arrays in a functional
+          style.
+        </p>
+
+        <h4>forEach()</h4>
+        <p>
+          The <code>forEach()</code> method executes a provided function once
+          for each array element. It is mainly used when you want to perform
+          side effects like logging or modifying DOM elements.
+        </p>
+        <pre><code class="javascript">
+        const colors = ['red', 'green', 'blue'];
+        
+        colors.forEach((color, index) => {
+          console.log(`Color ${index + 1}: ${color}`);
+        });
+                </code></pre>
+
+        <h4>map()</h4>
+        <p>
+          The <code>map()</code> method creates a new array populated with the
+          results of calling a function on every element. It's great when
+          transforming data.
+        </p>
+        <pre><code class="javascript">
+        const numbers = [1, 2, 3];
+        const squared = numbers.map(num => num * num);
+        console.log(squared); // [1, 4, 9]
+                </code></pre>
+
+        <h4>filter()</h4>
+        <p>
+          The <code>filter()</code> method returns a new array with all elements
+          that pass the test implemented by the provided function. Useful for
+          searching and filtering.
+        </p>
+        <pre><code class="javascript">
+        const ages = [12, 17, 20, 30];
+        const adults = ages.filter(age => age >= 18);
+        console.log(adults); // [20, 30]
+                </code></pre>
+
+        <h4>reduce()</h4>
+        <p>
+          The <code>reduce()</code> method executes a reducer function on each
+          element of the array, resulting in a single value. Perfect for
+          summing, counting, or combining items.
+        </p>
+        <pre><code class="javascript">
+        const scores = [10, 20, 30];
+        const total = scores.reduce((acc, curr) => acc + curr, 0);
+        console.log(total); // 60
+                </code></pre>
+
+        <h4>some()</h4>
+        <p>
+          The <code>some()</code> method tests whether at least one element in
+          the array passes the test.
+        </p>
+        <pre><code class="javascript">
+        const marks = [35, 42, 70];
+        const hasFailed = marks.some(mark => mark < 40);
+        console.log(hasFailed); // true
+                </code></pre>
+
+        <h4>every()</h4>
+        <p>
+          The <code>every()</code> method checks if all elements in the array
+          pass the test.
+        </p>
+        <pre><code class="javascript">
+        const passed = marks.every(mark => mark >= 40);
+        console.log(passed); // false
+                </code></pre>
+
+        <h4>find()</h4>
+        <p>
+          The <code>find()</code> method returns the first element that
+          satisfies the provided testing function. Returns
+          <code>undefined</code> if no match is found.
+        </p>
+        <pre><code class="javascript">
+        const users = [
+          { name: 'Tom', active: false },
+          { name: 'Lucy', active: true },
+        ];
+        
+        const activeUser = users.find(user => user.active);
+        console.log(activeUser); // { name: 'Lucy', active: true }
+                </code></pre>
+
+        <h4>findIndex()</h4>
+        <p>
+          The <code>findIndex()</code> method returns the index of the first
+          element that passes the test. Returns -1 if no match is found.
+        </p>
+        <pre><code class="javascript">
+        const nums = [1, 3, 5, 8];
+        const evenIndex = nums.findIndex(num => num % 2 === 0);
+        console.log(evenIndex); // 3
+                </code></pre>
+
+        <h4>includes()</h4>
+        <p>
+          The <code>includes()</code> method checks if an array includes a
+          certain value, returning true or false.
+        </p>
+        <pre><code class="javascript">
+        const fruits = ['apple', 'banana', 'mango'];
+        console.log(fruits.includes('banana')); // true
+        console.log(fruits.includes('grape'));  // false
+                </code></pre>
+
+        <h4>flat()</h4>
+        <p>
+          The <code>flat()</code> method creates a new array with all sub-array
+          elements concatenated into it recursively up to the specified depth.
+        </p>
+        <pre><code class="javascript">
+        const nested = [1, 2, [3, 4, [5]]];
+        console.log(nested.flat(2)); // [1, 2, 3, 4, 5]
+                </code></pre>
+
+        <h4>flatMap()</h4>
+        <p>
+          The <code>flatMap()</code> method first maps each element and then
+          flattens the result into a new array.
+        </p>
+        <pre><code class="javascript">
+        const words = ["hello", "world"];
+        const chars = words.flatMap(word => word.split(""));
+        console.log(chars); // ['h','e','l','l','o','w','o','r','l','d']
+                </code></pre>
         <div id="bottom-area">
           <div class="prev-next-link">
             <div class="link-aula" id="prev_class"></div>
