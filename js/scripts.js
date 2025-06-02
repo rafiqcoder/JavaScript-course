@@ -183,21 +183,141 @@ dfsadff
 // const num4 = newArray[2][3];
 
 // const sum = (a, b, c, d) => a + b + c + d;
-// console.log(sum(num1, num2, num3, num4)); // 65
+// // console.log(sum(num1, num2, num3, num4)); // 65
 
-var courses = ["HTML", "Python", "PHP"];
-console.log(courses); // ["HTML", "Python", "PHP"]
+// var courses = ["HTML", "Python", "PHP"];
+// console.log(courses); // ["HTML", "Python", "PHP"]
 
-courses.push("JavaScript"); // push method
+// courses.push("JavaScript"); // push method
 
-// ["HTML", "Python", "PHP", "JavaScript"]
+// // ["HTML", "Python", "PHP", "JavaScript"]
 
-courses.push("css");
+// courses.push("css");
 
-courses.pop();
+// courses.pop();
 
-courses.unshift("Bootstrap"); // unshift method
-courses.shift(); // shift method
-console.log(courses); // ["Bootstrap", "HTML", "Python", "PHP", "JavaScript"]
-courses.splice(2, 2, "react"); // splice method
-console.log(courses); // ["Bootstrap", "HTML", "PHP", "JavaScript"]
+// courses.unshift("Bootstrap"); // unshift method
+// courses.shift(); // shift method
+// console.log(courses); // ["Bootstrap", "HTML", "Python", "PHP", "JavaScript"]
+// courses.splice(2, 2, "react"); // splice method
+// console.log(courses); // ["Bootstrap", "HTML", "PHP", "JavaScript"]
+
+// Get the two numbers below
+
+// khairul kisu details
+
+// const KharulsDetails = {
+//     id: "1dfdf334",
+//     name: "Khairul",
+//     birthYear: 1995,
+//     currentYear: 2025,
+//     address: {
+//         city: "Dhaka",
+//         country: "Bangladesh",
+//         placeName: "Mirpur"
+//     },
+//     foodLikes: ["Biryani", 8, "Burger"],
+//     isMarried: false,
+//     age:function() {
+//         return this.address.city;
+//     }
+// }
+
+// console.log(KharulsDetails.foodLikes);
+
+// const employe = {
+//   name: "Rakib ",
+//   id: "dffd3r3r3fdf",
+//   designation: "Tt Analist",
+// };
+
+// employe.designation = "IT Manager";
+
+// console.log(employe.designation);
+
+
+
+
+// var courses = [
+//     {
+//         'title': 'Learn code in Python 3',
+//         'reviews': 6802,
+//         'students': 130129,
+//         'categories': ['programming', 'technology']
+//     },
+
+//     {
+//         'title': 'Learn PHP -  Beginner to Advanced',
+//         'reviews': 1204,
+//         'students': 30521,
+//         'categories': ['web development', 'programming']
+//     },
+
+//     {
+//         'title': 'Learn Microsoft Excel 2020',
+//         'reviews': 4209,
+//         'students': 18560,
+//         'categories': ['productivity', 'business']
+//     }
+    
+// ];
+
+
+// courses[1].categories[1] = "writer";
+// console.log(courses[1].categories[1]); // Output: writer
+
+
+// var student = {
+//   firstName: 20,
+//   lastName: 30,
+//   fullName: function () {
+//     return this.firstName + " " + this.lastName;
+//   },
+// };
+
+
+// console.log(student.fullName());
+
+
+// 30, 20, 40
+
+
+
+// 20, c , 30
+
+
+// function calcAverage (c){
+
+//     const average = (20 + c + 30)/3;
+
+
+
+
+//     return average
+
+// }
+
+
+// console.log(calcAverage(30))
+// console.log(calcAverage(20))
+// console.log(calcAverage(40))
+
+var course = {
+    'title': "Learn to Code in Python 3",
+    'categories': ['programming', 'technology', 'python'],
+    '5_stars_reviews': 420,
+    '4_stars_reviews': 80,
+    '3_stars_reviews': 33,
+    '2_stars_reviews': 20,
+    '1_stars_reviews': 4,
+    getPercentage : function (){
+        //totasl stars / five starts 
+        //results * 100
+        return // sum of all stars and percentage of fivestars
+    }
+}
+
+document.getElementById("color_button").onclick = function () {
+  this.style["background-color"] = "purple";
+  this.style.transform = "translateX(100px)";
+};
