@@ -231,6 +231,100 @@ console.log(fruits);  // ["Apple", "Banana", "Kiwi", "Orange"]
     </code>
 </pre>
 
+        <h4>Array Destructuring</h4>
+
+        <p>
+          Array destructuring allows you to extract values from an array and
+          assign them to variables in a single statement.
+        </p>
+
+        <pre><code class="javascript">
+const fruits = ["Apple", "Banana", "Mango"];
+
+// Extract values into variables
+const [first, second, third] = fruits;
+console.log(first, second, third); // Apple Banana Mango
+
+// Skipping elements
+const [x, , z] = fruits;
+console.log(x, z); // Apple Mango
+
+// Using default values
+const [a, b, c = "Orange"] = ["Grapes", "Pineapple"];
+console.log(a, b, c); // Grapes Pineapple Orange
+        </code></pre>
+
+        <h4>Spread Operator</h4>
+
+        <p>
+          The spread operator (<code>...</code>) allows you to expand an array
+          into individual elements.
+        </p>
+
+        <pre><code class="javascript">
+const numbers = [1, 2, 3];
+const moreNumbers = [...numbers, 4, 5];
+console.log(moreNumbers); // [1, 2, 3, 4, 5]
+
+// Copying an array
+const copy = [...numbers];
+console.log(copy); // [1, 2, 3]
+        </code></pre>
+
+        <h4>Rest Parameters</h4>
+
+        <p>
+          Rest parameters allow you to represent an indefinite number of
+          arguments as an array.
+        </p>
+
+        <pre><code class="javascript">
+function sum(...args) {
+    return args.reduce((acc, val) => acc + val, 0);
+}
+
+console.log(sum(1, 2, 3, 4)); // 10
+        </code></pre>
+
+        <h4>Array.from()</h4>
+
+        <p>
+          The <code>Array.from()</code> method creates a new array from an
+          array-like or iterable object.
+        </p>
+
+        <pre><code class="javascript">
+const str = "Hello";
+const chars = Array.from(str);
+console.log(chars); // ["H", "e", "l", "l", "o"]
+        </code></pre>
+
+        <h4>Array.find()</h4>
+
+        <p>
+          The <code>find()</code> method returns the first element in an array
+          that satisfies a provided testing function.
+        </p>
+
+        <pre><code class="javascript">
+const numbers = [5, 12, 8, 130, 44];
+const found = numbers.find(num => num > 10);
+console.log(found); // 12
+        </code></pre>
+
+        <h4>Array.filter()</h4>
+
+        <p>
+          The <code>filter()</code> method creates a new array with all elements
+          that pass the test implemented by the provided function.
+        </p>
+
+        <pre><code class="javascript">
+const numbers = [1, 2, 3, 4, 5];
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers); // [2, 4]
+        </code></pre>
+
         <div id="bottom-area">
           <div class="prev-next-link">
             <div class="link-aula" id="prev_class"></div>

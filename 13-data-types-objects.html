@@ -211,6 +211,106 @@
                 </code>
             </pre>
             
+            <h4>Object Destructuring</h4>
+
+                <p>
+                    Object destructuring allows you to extract properties from an object and assign them to variables in a single statement.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    const employee = {
+        name: 'James Taylor',
+        yearOfBirth: 1948,
+        ID: 'SBJ0001',
+        role: 'IT Analyst'
+    };
+
+    // Extract properties into variables
+    const { name, role } = employee;
+    console.log(name, role); // James Taylor IT Analyst
+
+    // Rename variables while destructuring
+    const { name: employeeName, role: employeeRole } = employee;
+    console.log(employeeName, employeeRole); // James Taylor IT Analyst
+
+    // Use default values for missing properties
+    const { department = 'IT' } = employee;
+    console.log(department); // IT
+                    </code>
+                </pre>
+
+                <h4>Spread Operator</h4>
+
+                <p>
+                    The spread operator (<code>...</code>) allows you to create a shallow copy of an object or merge multiple objects.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    const employee = {
+        name: 'James Taylor',
+        role: 'IT Analyst'
+    };
+
+    // Create a shallow copy
+    const copy = { ...employee };
+    console.log(copy); // { name: 'James Taylor', role: 'IT Analyst' }
+
+    // Merge objects
+    const updatedEmployee = { ...employee, role: 'IT Manager', department: 'IT' };
+    console.log(updatedEmployee); // { name: 'James Taylor', role: 'IT Manager', department: 'IT' }
+                    </code>
+                </pre>
+
+                <h4>Object.entries() and Object.keys()</h4>
+
+                <p>
+                    These methods allow you to work with the keys and values of an object.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    const employee = {
+        name: 'James Taylor',
+        role: 'IT Analyst'
+    };
+
+    // Get all keys
+    console.log(Object.keys(employee)); // ['name', 'role']
+
+    // Get all entries (key-value pairs)
+    console.log(Object.entries(employee)); // [['name', 'James Taylor'], ['role', 'IT Analyst']]
+                    </code>
+                </pre>
+
+                <h4>Object.freeze() and Object.seal()</h4>
+
+                <p>
+                    These methods allow you to control modifications to an object.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    const employee = {
+        name: 'James Taylor',
+        role: 'IT Analyst'
+    };
+
+    // Prevent modifications
+    Object.freeze(employee);
+    employee.role = 'IT Manager';
+    console.log(employee.role); // IT Analyst (modification ignored)
+
+    // Allow modifications to existing properties but prevent adding/removing properties
+    const employee2 = { name: 'Alice', role: 'Developer' };
+    Object.seal(employee2);
+    employee2.role = 'Senior Developer';
+    console.log(employee2.role); // Senior Developer
+    employee2.department = 'IT';
+    console.log(employee2.department); // undefined (new property not added)
+                    </code>
+                </pre>
             
             
             <div id="bottom-area">
