@@ -204,6 +204,116 @@ setTimeout(function() {
 setTimeout(() => console.log("Arrow style"), 1000);
 </code></pre>
 
+        <h4>Optional Chaining (?.)</h4>
+
+        <p>
+          Optional chaining allows you to safely access deeply nested properties
+          without worrying about errors if a property is
+          <code>undefined</code> or <code>null</code>.
+        </p>
+
+        <pre><code class="javascript">
+const user = { profile: { name: "Alice" } };
+
+// Accessing nested properties safely
+console.log(user.profile?.name); // Alice
+console.log(user.address?.city); // undefined (no error)
+</code></pre>
+
+        <h4>Import and Export (Modules)</h4>
+
+        <p>
+          ES6 introduced modules to organize code. Use <code>export</code> to
+          make variables, functions, or classes available to other files, and
+          <code>import</code> to use them.
+        </p>
+
+        <pre><code class="javascript">
+// In math.js
+export const add = (a, b) => a + b;
+export const subtract = (a, b) => a - b;
+
+// In main.js
+import { add, subtract } from './math.js';
+
+console.log(add(5, 3)); // 8
+console.log(subtract(10, 4)); // 6
+</code></pre>
+
+        <h4>Async/Await</h4>
+
+        <p>
+          Async/await simplifies working with asynchronous code, making it look
+          synchronous. Use <code>async</code> to define a function and
+          <code>await</code> to pause execution until a promise resolves.
+        </p>
+
+        <pre><code class="javascript">
+// Simulating an asynchronous operation
+const fetchData = async () => {
+    try {
+        const response = await fetch('https://api.example.com/data');
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+};
+
+fetchData();
+</code></pre>
+
+        <h4>Regular Expressions (RegEx)</h4>
+
+        <p>
+          Regular Expressions (RegEx) are patterns used to match character
+          combinations in strings. They are powerful tools for searching,
+          validating, and manipulating text.
+        </p>
+
+        <h5>Why Use Regular Expressions?</h5>
+        <ul>
+          <li>To validate user input (e.g., email, phone numbers).</li>
+          <li>To search for specific patterns in text.</li>
+          <li>To replace or extract parts of a string.</li>
+        </ul>
+
+        <h5>Basic Syntax</h5>
+        <pre><code class="javascript">
+// Example: Validate an email address
+const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+const email = "example@domain.com";
+console.log(emailPattern.test(email)); // true
+
+// Example: Extract numbers from a string
+const text = "Order #12345 is ready.";
+const numberPattern = /\d+/g;
+console.log(text.match(numberPattern)); // ["12345"]
+
+// Example: Replace all spaces with dashes
+const sentence = "Hello World!";
+const result = sentence.replace(/\s/g, "-");
+console.log(result); // "Hello-World!"
+</code></pre>
+
+        <h5>How to Apply Regular Expressions</h5>
+        <p>
+          Regular expressions are applied using methods like
+          <code>test()</code>, <code>match()</code>, <code>replace()</code>, and
+          <code>split()</code> on strings.
+        </p>
+
+        <pre><code class="javascript">
+// Check if a string contains a pattern
+const pattern = /hello/i; // Case-insensitive match
+console.log(pattern.test("Hello, world!")); // true
+
+// Split a string by commas
+const csv = "apple,banana,orange";
+console.log(csv.split(/,/)); // ["apple", "banana", "orange"]
+</code></pre>
+
         <div id="bottom-area">
           <div class="prev-next-link">
             <div class="link-aula" id="prev_class"></div>
