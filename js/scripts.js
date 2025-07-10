@@ -587,16 +587,86 @@ dfsadff
 //   console.log(typeof inputValue);
 // };
 
-document.getElementById("show_check").onclick = function () {
-  var check = document.getElementsByName("interest");
+// document.getElementById("show_check").onclick = function () {
+//   var check = document.getElementsByName("interest");
 
-  document.getElementById("selected_check").innerHTML = "";
-  console.log("clicked", check);
+//   document.getElementById("selected_check").innerHTML = "";
+//   console.log("clicked", check);
 
-  for (var b = 0; b < check.length; b++) {
-    if (check[b].checked) {
-      document.getElementById("selected_check").innerHTML +=
-        "<li>" + check[b].value + "</li>";
-    }
+//   for (var b = 0; b < check.length; b++) {
+//     if (check[b].checked) {
+//       document.getElementById("selected_check").innerHTML +=
+//         "<li>" + check[b].value + "</li>";
+//     }
+//   }
+// };
+
+// Destructuring
+// const user = { name: "Alice", age: 25 };
+// const { name, age } = user;
+// console.log(name, age); // Alice 25
+
+// Spread Operator
+// const arr1 = [1, 2, 3];
+// const arr2 = [...arr1, 4, 5];
+// console.log(arr2); // [1, 2, 3, 4, 5]
+
+// Template Literals
+// const greeting = `Hello, ${name}!`;
+// console.log(greeting); // Hello, Alice!
+
+//spread operator ...arrayname
+
+// const finalShukiList = [...shutkiList1, ...shutkiList2];
+// console.log("this is new copied final array", finalShukiList);
+
+// distructuring shuktilist1
+
+// const shutkiList1 = ["puti shutki", "chanda shutki", "mola shutki"];
+// const shutkiList2 = ["chingri shutki", "tengra shutki"];
+
+// const finalShukiList = [
+//   ...shutkiList1,
+//   ...shutkiList2,
+//   "new shutki",
+//   "aro SHutki",
+// ];
+
+// console.log(finalShukiList);
+
+// const user = { name: "Alice", age: 25, city: "Dhaka" };
+// const subject = { title: "Mathematics", code: "MATH101" };
+
+// const alideTable = { ...user, country: "Bangladesh" , ...subject };
+// console.log(alideTable);
+// const userName = "Alice";
+
+// const greeting = `Hello, ${userName}!`;
+// console.log(greeting); // Hello, Alice
+
+// const user = { name: "Alice", age: 25, GeoLocation: "Wonderland" };
+
+// const { name: userName, age: userAge, GeoLocation } = user;
+
+// console.log(userName, userAge, GeoLocation); // Alice 25
+// const user = { profile: { name: "Alice" } };
+
+// // Accessing nested properties safely
+// console.log(user.profile?.name); // Alice
+// console.log(user.address?.city); // undefined (no error)
+
+
+
+// Simulating an asynchronous operation
+const fetchData = async () => {
+  try {
+      const response = await fetch('https://api.example.com/product');
+      const data = await response.json();
+      console.log(data);
+  } catch (error) {
+      console.error('Error fetching data:', error);
   }
 };
+
+fetchData();
+
